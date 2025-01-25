@@ -122,4 +122,5 @@ echo $distances_to_sun['Earth'];
 	print_array($array);
 	?>
 
+
 </body>
