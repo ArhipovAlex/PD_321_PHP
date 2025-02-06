@@ -128,4 +128,6 @@ function avg_arr2D($arr)
 	return sum_arr2D($arr)/$count;
 }
 
+
+
 require 'index.view.php';

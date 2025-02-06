@@ -147,7 +147,6 @@ echo $distances_to_sun['Earth'];
 	echo 'Сумма элементов массива: ' . sum_arr2D($arr_hw2D) . '<br>';
 	echo 'Среднее арифметическое элементов массива: ' . avg_arr2D($arr_hw2D) . '<br>';
 
-	?>
 
 
 </body>

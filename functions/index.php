@@ -3,12 +3,7 @@
 
 $title = 'PHP Functions';
 
-function exchange(&$a,&$b)
-{
-	$buffer = $a;
-	$a=$b;
-	$b=$buffer;
-}
+
 function print_values($a,$b,$delimiter = ';')
 {
 	echo '<pre>';
@@ -58,5 +53,52 @@ function dec_to_hex($dec)
      return $sign . $h; 
  }
 
+ function FillRand(&$arr, $size=5, $minRand=0,$maxRand=100)
+{
+	for($i=0; $i<$size;$i++)
+	{
+		$arr[$i]=rand($minRand,$maxRand);
+	}
+}
+function PrintArr($arr)
+{
+	echo '<pre>';
+	for($i=0;$i<count($arr);$i++)
+	{
+		echo "$arr[$i]\t";
+	}
+	echo '</pre>';
+}
 
+function increment()
+{
+	static $counter = 0;
+	$counter+=10;
+	return $counter;
+}
+
+function summator($limit)
+{
+	static $sum=0;
+	$sum++;
+	if($sum<$limit) summator($limit);
+	return $sum;
+}
+
+
+function sum(int $a, int $b): int | float
+{
+	return $a+$b;
+}
+
+$arrow_function = fn () => 'Hello in Arrow Function';
+$non_arrow_function = function () {return 'Hello in not Arrow Function!';};
+
+$PI = 3.14;
+$circle_area = function (float $radius) use ($PI)
+{
+	return $PI*$radius*$radius;
+};
+
+$exchange = fn(&$a,&$b) => [$a,$b]=[$b,$a];
 require 'index.view.php';

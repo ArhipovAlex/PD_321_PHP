@@ -1,0 +1,27 @@
+﻿body
+{
+	background-color:darkslategray;
+	display:grid;
+}
+.login-card{
+	width:300px;
+	background-color:darkcyan;
+	border-radius:5px;
+
+	justify-self:center;
+}
+.login-item{
+	width:300px;
+	display:flex;
+	justify-content:center;
+	justify-self:center;
+}
+	.login-item > label{
+		width:100px;
+		text-align:right;
+		margin:5px;
+	}
+	.login-item >input{
+		width:250px;
+		margin:5px;
+	}
