@@ -1,0 +1,11 @@
+<?php
+	$filename ='../files/file.txt';
+	$file = fopen($filename,'r');
+	echo '<pre>';
+	var_dump($file);
+	echo '</pre>';
+	echo fread($file,fileofsize($filename));
+	echo 'Size: '.fileofsize($filename);
+	fclose($file);
+
+?>

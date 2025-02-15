@@ -16,3 +16,7 @@
 		<source src="../uploads/<?= $_FILES['file']['name']?>">
 	</audio>
 <?php endif ?>
+<?php if($_FILES['file']['type'] === 'video/mp4'):?>
+	<video src="../uploads/<?= $_FILES['file']['name']?>" width="480" height="270" poster="poster.gif" controls />
+
+<?php endif ?>
