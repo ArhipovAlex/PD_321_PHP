@@ -4,8 +4,8 @@
 	echo '<pre>';
 	var_dump($file);
 	echo '</pre>';
-	echo fread($file,fileofsize($filename));
-	echo 'Size: '.fileofsize($filename);
+	echo fread($file,filesize($filename));
+	echo 'Size: '.filesize($filename);
 	fclose($file);
 
 ?>
