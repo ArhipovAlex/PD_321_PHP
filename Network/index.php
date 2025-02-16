@@ -1,71 +1,22 @@
 <?php
-	$srcfilename=__DIR__ . "/files/201 RAW.txt";
-	//echo file_exists($filename);
-	//$srcfile = fopen($srcfilename, 'r');
-	$array = file($srcfilename);
-	echo '<pre>';
-	print_r($array);
-	echo '</pre>';
-	//fclose($srcfile);
+	require_once'functions.php';
+
+	$filenames = get_filenames(__DIR__.'/files/201 RAW.txt');
 
 	$IPs = [];
 	$MACs = [];
 
-	for($i=0;$i<count($array);$i++)
-	{
-		$subs = explode(' ',$array[$i]);
-		$ip=$subs[array_key_first($subs)];
-		$mac=$subs[array_key_last($subs)];
-		$mac = str_replace("\n",'',$mac);
-		echo '<pre>';
-		//print_r($subs);
-		echo "$mac\t$ip";
-		echo '</pre>';
-
-		$IPs[] = $ip;
-		$MACs[] = $mac;
-	}
+	//read_addresses_from_file(__DIR__.'/files/201 RAW.txt', $IPs, $MACs);
+	read_addresses_from_file($filenames['source'], $IPs, $MACs);
 
 	echo '<pre>';
 	print_r($IPs);
+	print_r($filenames);
 	echo '</pre>';
 
-	$dst_filename=__DIR__.'/files/201.WAL';
-	$dst_file=fopen($dst_filename, 'w');
+	write_addresses_to_file($filenames['WAL'], $IPs, $MACs);
 
-	for($i=0;$i<count($MACs);$i++)
-	{
-		fwrite($dst_file,"{$MACs[$i]}\t{$IPs[$i]}\n");
-	}
+	write_in_dhcpd_file($filenames['DHCPD'], $IPs, $MACs);
 
-	fclose($dst_file);
-
-	$wal_filename = __DIR__ . '/files/201.WAL';
-	//$wal_file = fopen($wal_filename, 'r');
-	$content = file($wal_filename);
-	echo '<table border cellspacing="0">';
-		echo '<tr>';
-			echo '<th>';
-			echo 'MAC address';
-			echo '</th>';
-			echo '<th>';
-			echo 'IP address';
-			echo '</th>';
-
-				for($i=0; $i<count($content); $i++)
-				{
-					echo '<tr>';
-					echo '<td>';
-						echo explode("\t",$content[$i])[0];
-					echo '</td>';
-					echo '<td>';
-						echo explode("\t",$content[$i])[array_key_last(explode("\t",$content[$i]))];
-					echo '</td>';
-					echo '</tr>';
-				}
-
-		echo '</tr>';
-	echo '</table>';
-
-	//fclose($wal_file);
+	print_table_from_file($filenames['WAL']);
 ?>
