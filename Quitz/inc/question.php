@@ -1,7 +1,7 @@
 ﻿<?php
 	require_once __DIR__.'/data.php';
 	$number = $_REQUEST['q'];
-	if($number<count($questions)-1)
+	if($number<count($questions))
 	{
 		echo $number;
 		$response = "<h2>{$questions[$number]}</h2>";
@@ -10,6 +10,7 @@
 			$response .= "<input type=\"radio\" name=\"question_{$number}\" id=\"{$number}_{$i}\" value\"{$number}_{$i}\">";
 			$response .= "<label for=\"{$number}_{$i}\">{$answers[$number][$i]};</label><br>";
 		}
+		$response .= "<input type=\"button\" value=\"prev\" onclick=\"prevQuestion()\">";
 		$response .= "<input type=\"button\" value=\"next\" onclick=\"nextQuestion()\">";
 	}
 	else{
