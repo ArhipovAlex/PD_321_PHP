@@ -7,7 +7,7 @@
 		$response = "<h2>{$questions[$number]}</h2>";
 		for($i=0;$i<count($answers[$number]);$i++)
 		{
-			$response .= "<input type=\"radio\" name=\"question_{$number}\" id=\"{$number}_{$i}\" value\"{$number}_{$i}\">";
+			$response .= "<input type=\"radio\" name=\"question_{$number}\" id=\"{$number}_{$i}\" value=\"{$number}_{$i}\">";
 			$response .= "<label for=\"{$number}_{$i}\">{$answers[$number][$i]};</label><br>";
 		}
 		$response .= "<input type=\"button\" value=\"prev\" onclick=\"prevQuestion()\">";

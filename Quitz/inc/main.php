@@ -12,9 +12,10 @@
     </form>
     <script>
         var questionNumber=-1;
-        function nextQuestion(number)
+        function nextQuestion()
         {
             let request= new XMLHttpRequest();
+            commitAnswer();
             questionNumber++;
             request.onreadystatechange = function(){
                 document.getElementById("question_number").innerHTML=request.responseText;
@@ -22,7 +23,7 @@
             request.open("GET","question.php?q="+questionNumber,true);
             request.send();
         }
-        function prevQuestion(number)
+        function prevQuestion()
         {
             if(questionNumber!=0){
 
@@ -34,7 +35,13 @@
             request.open("GET","question.php?q="+questionNumber,true);
             request.send();
             }
-        }   
+        }
+        function commitAnswer()
+        {    
+            let answer = document.querySelector(`input[name="question_${questionNumber}"]:checked`);
+            if(answer!=null) console.log(answer.value);
+            else console.log("No answer");
+        }
     </script>
 </body>
 </html>
