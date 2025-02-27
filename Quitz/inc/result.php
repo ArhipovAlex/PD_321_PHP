@@ -5,6 +5,8 @@ echo '</pre>';
 
 require_once __DIR__.'/data.php';
 
+print_r($user_answers);
+
 $asked_questions=array_keys($_POST);
 $user_answers = array_values($_POST);
 $score = 0;

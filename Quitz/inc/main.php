@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="ltc.ico"/>
     <title></title>
 </head>
 <body onload="nextQuestion()">
@@ -15,12 +16,14 @@
         function nextQuestion()
         {
             let request= new XMLHttpRequest();
-            commitAnswer();
+            let answer=getAnswer();
             questionNumber++;
+            
             request.onreadystatechange = function(){
                 document.getElementById("question_number").innerHTML=request.responseText;
             }
-            request.open("GET","question.php?q="+questionNumber,true);
+            if(answer==null) request.open("GET","question.php?q="+questionNumber,true);
+            else request.open("GET","question.php?q="+questionNumber+"&a="+answer.value,true);
             request.send();
         }
         function prevQuestion()
@@ -36,11 +39,11 @@
             request.send();
             }
         }
-        function commitAnswer()
+        function getAnswer()
         {    
             let answer = document.querySelector(`input[name="question_${questionNumber}"]:checked`);
-            if(answer!=null) console.log(answer.value);
-            else console.log("No answer");
+            if(answer!=null) {console.log(answer.value); return answer;}
+            //else console.log("No answer");
         }
     </script>
 </body>

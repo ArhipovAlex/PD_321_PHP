@@ -1,6 +1,17 @@
 ﻿<?php
 	require_once __DIR__.'/data.php';
 	$number = $_REQUEST['q'];
+	$answer;
+	if(array_key_exists('a',$_REQUEST)){
+		$answer=$_REQUEST['a'];
+		$question_number = explode('_',$answer)[0];
+		$user_answer = explode('_',$answer)[1];
+		$user_answers[$question_number] = $user_answer;
+		echo 'Answer: ';
+		print_r($user_answer);
+	}
+
+	print_r($_REQUEST);
 	if($number<count($questions))
 	{
 		echo $number;
