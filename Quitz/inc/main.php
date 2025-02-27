@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="ltc.ico"/>
+    <link rel="icon" href="ltc.ico">
     <title></title>
 </head>
 <body onload="nextQuestion()">
-    <h1 id="question_number" name="question_number">Quitz<h1>
-    <form id="question" action="result.php" method="post">
+    <!--<h1 id="question_number" name="question_number">Quitz<h1>-->
+    <form id="question_number" name="question_number" action="result.php" method="post">
         <!--<input type="button" value="next" onclick="nextQuestion()">-->
     </form>
     <script>

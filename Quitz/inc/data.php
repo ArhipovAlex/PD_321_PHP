@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+	session_start();
 	$title='Quitz PD_321';
 
 	$questions=
@@ -17,7 +18,7 @@
 		['2012', '2013','2015','2016'],
 		['CryEngine 3', 'CryEngine 5','Rage']
 	];
-	$correct_answer=
+	$correct_answers=
 	[
 		3,
 		0,
