@@ -17,6 +17,7 @@
         {
             let request= new XMLHttpRequest();
             let answer=getAnswer();
+            let answer=getAnswer();
             questionNumber++;
             
             request.onreadystatechange = function(){
@@ -32,6 +33,7 @@
 
             questionNumber--;
             let request= new XMLHttpRequest();
+            let answer=getAnswer();
             request.onreadystatechange = function(){
                 document.getElementById("question_number").innerHTML=request.responseText;
             }
