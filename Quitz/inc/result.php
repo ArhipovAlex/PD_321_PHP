@@ -24,5 +24,10 @@ echo "Количество правильных ответов {$score}.";
 //foreach($_POST as $user_answer){
 //	$variant = explode('_',$user_answer);	
 //}
+echo "<form class="reload" action="login.php" method="post">";
+echo "<br><input type=\"checkbox\" id=\"sendmessage\">";
+echo "<label for=\"sendmessage\">Отправить результат теста на почту</label><br>";
+echo "<br><input type=\"submit\" value=\"Завершить тест\">";
+echo "</form>";
 session_destroy();
 ?>
