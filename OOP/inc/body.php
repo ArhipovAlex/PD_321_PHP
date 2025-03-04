@@ -1,64 +1,57 @@
 ﻿<?php
-
-class Point
-{//переменные внутри класса обязательно с модификатором доступа
-	private $x;
-	private $y;
-//для доступа к переменным используются get и set методы 
-	function get_X()
-	{
-		return $this->x;
-	}
-	function get_Y()
-	{
-		return $this->y;
-	}
-//обращаться к полям объекта можно через оператор ->, после которого $ нет
-//к переменным члена класса внутри класса обращаться только через $this
-	function set_X($x)
-	{
-		$this->x=$x;
-	}
-	function set_Y($y)
-	{
-		$this->y=$y;
-	}
-	//constructors
-//в php конструктор называют ключевым словом function __construct()
-//если не описано ни одного конструктора интерпретатор неявно добавляет по умолчанию
-//но это конструктор сразу удаляется из класса если описан параметризованный конструктор
-
-	function __construct($x=0,$y=0)
-	{
-		$this->set_X($x);
-		$this->set_Y($y);
-		echo "Constructor:\t<br>";
-	}
-	function __destruct()
-	{
-		echo "Destructor:\t<br>";
-	}
-
-	function __tostring()
-	{
-		return 'Point';
-	}
-
-	function info()
-	{
-		if($this->x == null && this->y == null)
-		echo 'Point is uninitialized';
-		else echo "X = {$this->x}, Y = {$this->y};";
-	}
-}
- 
-$A= new Point();
+require_once __DIR__ . '/point.php';
+require_once __DIR__ . '/inheritance.php';
+//$A= new Point();
 //классы исключительно ссылочные типы
-$A->set_X(1024);
-$A->set_Y(2048);
+//$A->set_X(1024);
+//$A->set_Y(2048);
 //echo "X = {$A->get_X()}, Y = {$A->get_Y()};";
-$A->info();
-//метобы класса всегда публичные
-$B = new Point(2,3);
-$B->info();
+//$A->info();
+//методы класса всегда публичные
+//$B = new Point(2,3);
+//$B->info();
+
+//$human = new Human('Antonio', 'Montana', 25);
+//echo $human . '<br>';
+//
+//$student = new Student('Jessie', 'Pinkman', 25, 'Chemistry', 'WW_220', 95, 98);
+//echo $student . '<br>';
+//
+//$teacher = new Teacher('Walter', 'White', 50, 'Chemistry', 25);
+//echo $teacher . '<br>';
+//
+//$graduate = new Graduate('Hank', 'Schreider',40,'Criminalistic','OBN',80,60,'How to catch Heisenberg');
+//echo $graduate . '<br>';
+
+$group =
+[
+	new Student('Jessie', 'Pinkman', 25, 'Chemistry', 'WW_220', 95, 98),
+	new Teacher('Walter', 'White', 50, 'Chemistry', 25),
+	new Graduate('Hank', 'Schreider',40,'Criminalistic','OBN',80,60,'How to catch Heisenberg'),
+	new Student('Tommy', 'Vercetty', 25, 'Thief', 'Vice', 95, 98),
+	new Teacher('Ricardo', 'Diaz', 55, 'Weapon distruction', 20)
+];
+echo '<table>';
+echo '<tr>';
+echo '<th>First Name</th><th>Last Name</th><th>Age</th><th>Speciality</th><th>Info</th>';
+echo '</tr>';
+for ($i = 0; $i<count($group); $i++){
+	//echo $group[$i] . '<hr>';
+	echo '<tr>';
+	echo "<td>{$group[$i]->get_first_name()}</td>";
+	echo "<td>{$group[$i]->get_last_name()}</td>";
+	echo "<td>{$group[$i]->get_age()}</td>";
+	echo "<td>{$group[$i]->get_speciality()}</td>";
+	echo '<td>';
+	//if(get_class($group[$i])==="Student") 
+	//	echo "Group:{$group[$i]->get_group()}, rating:{$group[$i]->get_rating()}, attendance:{$group[$i]->get_attendance()}";
+	//if(get_class($group[$i])==="Teacher") 
+	//	echo "Experience: {$group[$i]->get_experience()}";	
+	//if(get_class($group[$i])==="Student") 
+	//	echo "Group:{$group[$i]->get_group()}, rating:{$group[$i]->get_rating()}, attendance:{$group[$i]->get_attendance()}";
+	echo $group[$i]->info();
+	echo '</td>';
+	echo '</tr>';
+}
+echo '</table>';
 ?>
