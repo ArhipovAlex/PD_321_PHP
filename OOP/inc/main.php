@@ -64,5 +64,7 @@ echo '</table>';*/
 //}
 //fclose($file);
 //save($group,"group.csv");
-write("group.csv");
+$group=load("group.csv");
+table_group($group);
+
 ?>
