@@ -48,6 +48,11 @@ class Human
 		return "{$this->first_name} {$this->last_name} {$this->age}";
 	}
 	function info(){}
+	function csv()
+	{
+		$type = get_class($this);
+		return "{$type}:{$this->first_name},{$this->last_name},{$this->age}";
+	}
 }
 //////////////////////////////
 
@@ -109,7 +114,10 @@ class Student extends Human
 	function info(){
 		return "Group:{$this->get_group()}, rating:{$this->get_rating()}, attendance:{$this->get_attendance()}";
 	}
-
+	function csv()
+	{
+		return parent::csv() . ",{$this->speciality},{$this->group},{$this->rating},{$this->attendance}";
+	}
 	function __tostring()
 	{
 		return parent::__tostring() . " {$this->speciality} {$this->group} {$this->rating} {$this->attendance}";
@@ -143,7 +151,10 @@ class Graduate extends Student
 	function info(){
 		return parent::info() . ", subject:{$this->get_subject()}";
 	}
-
+	function svc()
+	{
+		return parent::csv() . ",{$this->subject}";
+	}
 	function __tostring()
 	{
 		return parent::__tostring() . " {$this->subject}";
@@ -190,7 +201,10 @@ class Teacher extends Human
 	{
 		return "Experience: {$this->get_experience()}";
 	}
-
+	function csv()
+	{
+		return parent::csv() . ",{$this->speciality},{$this->experience}";
+	}
 	function __tostring()
 	{
 		return parent::__tostring() . " {$this->speciality} {$this->experience}";
