@@ -25,7 +25,7 @@ require_once __DIR__ . '/functions.php';
 //$graduate = new Graduate('Hank', 'Schreider',40,'Criminalistic','OBN',80,60,'How to catch Heisenberg');
 //echo $graduate . '<br>';
 
-$group =
+/*$group =
 [
 	new Student('Jessie', 'Pinkman', 25, 'Chemistry', 'WW_220', 95, 98),
 	new Teacher('Walter', 'White', 50, 'Chemistry', 25),
@@ -33,6 +33,7 @@ $group =
 	new Student('Tommy', 'Vercetty', 25, 'Thief', 'Vice', 95, 98),
 	new Teacher('Ricardo', 'Diaz', 55, 'Weapon distruction', 20)
 ];
+
 echo '<table>';
 echo '<tr>';
 echo '<th>First Name</th><th>Last Name</th><th>Age</th><th>Speciality</th><th>Info</th>';
@@ -55,12 +56,13 @@ for ($i = 0; $i<count($group); $i++){
 	echo '</td>';
 	echo '</tr>';
 }
-echo '</table>';
+echo '</table>';*/
 
 //$file=fopen("group.txt","w");
 //for($i=0;$i<count($group); $i++){
 //	fwrite($file,$group[$i]->csv(). ";\n");
 //}
 //fclose($file);
-save($group,"group.csv")
+//save($group,"group.csv");
+write("group.csv");
 ?>
