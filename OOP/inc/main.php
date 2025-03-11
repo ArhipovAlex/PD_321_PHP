@@ -64,7 +64,18 @@ echo '</table>';*/
 //}
 //fclose($file);
 //save($group,"group.csv");
-$group=load("group.csv");
-table_group($group);
+//$group=load("group.csv");
+//table_group($group);
 
+//echo serialize($group);
+
+//$file = fopen("serial.txt","w");
+//fwrite($file,serialize($group));
+//fclose($file);
+
+//file_put_contents("walter.txt", serialize($group));
+$group = unserialize(file_get_contents("walter.txt"));
+//$buffer = file_get_contents("serial.txt");
+//$group = unserialize($buffer);
+table_group($group);
 ?>
