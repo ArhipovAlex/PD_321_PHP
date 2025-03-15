@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$id=$_REQUEST["id"];
+	if($id>0){
 
 	$server_name = "DESKTOP-CU1U64A";
 	$connection_info=array("Database" =>"PD_212", "UID" => "PHP", "PWD" => "111", "CharacterSet" => "UTF-8");
@@ -36,4 +37,7 @@
 		echo '</tr>';
 	}
 	sqlsrv_close($connection);
+	} else{
+		require_once __DIR__ . '/get_teachers.php';
+	}
 ?>
