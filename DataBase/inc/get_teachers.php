@@ -7,7 +7,7 @@
 	teacher_id,
 	last_name + ' ' + first_name + ' ' + middle_name AS full_name,
 	convert(varchar(25), birth_date, 121) AS birth_day,
-	convert(varchar(25), work_since, 121) AS works_from
+	DATEDIFF(DAY, work_since,GETDATE())/365 AS works_from
 	FROM Teachers;
 	";
 
