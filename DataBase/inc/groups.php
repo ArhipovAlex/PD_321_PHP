@@ -12,6 +12,7 @@
         <tr>
             <th>ID</th>
             <th>Название</th>
+            <th>Кол-во студентов</th>
             <th>Направление</th>
         </tr>
         <?php require_once __DIR__ . '/get_groups.php'; ?>

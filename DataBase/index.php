@@ -10,6 +10,7 @@
     <ul>
         <li><a href="inc/directions.php">Направления обучения</a></li>
         <li><a href="inc/groups.php">Группы</a></li>
+        <li><a href="inc/teachers.php">Преподаватели</a></li>
     </ul>
 </body>
 </html>
