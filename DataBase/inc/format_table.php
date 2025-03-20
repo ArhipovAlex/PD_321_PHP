@@ -8,6 +8,9 @@
 				echo $col;
 				echo '</td>';
 			}
+			//echo '<td>';
+			//	
+			//echo '</td>';
 			echo '</tr>';
 		}
 	}
