@@ -1,8 +1,10 @@
 <?php
-	function get_teacher_from_base($id)
+	require_once __DIR__.'/connection.php';
+	print_r($_REQUEST);
+
+	//function get_teacher_from_base($id)
 	{
-		require_once __DIR__.'/connection.php';
-		$query = "SELECT * FROM teachers WHERE teacher_id={$id}";
+		$query = "SELECT * FROM teachers WHERE teacher_id={$_REQUEST['id']}";
 		$result = sqlsrv_query($connection, $query);
 		if($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC))
 		{
