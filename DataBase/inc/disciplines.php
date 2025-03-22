@@ -23,7 +23,7 @@
             <th>Количество часов</th>
         </tr>
         </thead>
-        <tbody id="table-teachers">
+        <tbody id="table-disciplines">
         <?php require_once __DIR__ . '/get_disciplines_for_table.php'; ?>
         <tr>
             <td align="center">
@@ -40,7 +40,7 @@
                 let request = new XMLHttpRequest();
                 request.onreadystatechange = function () {
                     if(this.readyState == 4 && this.status == 200)
-                        document.getElementById("table-teachers").innerHTML = this.responseText;
+                        document.getElementById("table-disciplines").innerHTML = this.responseText;
                 };
                 request.open("GET","get_disciplines_for_teacher.php?id="+id,true);
                 request.send();

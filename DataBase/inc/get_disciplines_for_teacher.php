@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	$id=$_REQUEST["id"];
 	if($id>0){
 	require_once __DIR__ . "/connection.php";

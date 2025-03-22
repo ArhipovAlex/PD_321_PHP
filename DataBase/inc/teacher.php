@@ -22,5 +22,14 @@
 			//var_dump($daterange);
 			echo "Опыт преподавания: {$daterange->format('%Y years')}<br>";
 		}
+		echo "<h3>Читаемые дисциплины:</h3>";
+		
+		echo '<table>';
+			echo '<thead>';
+			echo '</thead>';
+			echo '<tbody id="table-disciplines">';
+				require_once __DIR__.'/get_disciplines_for_teacher.php';
+			echo '</tbody>';
+		echo '</table>';
 	}
 ?>
