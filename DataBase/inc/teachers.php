@@ -9,11 +9,14 @@
 <body>
     <h1>Teachers</h1>
 
+    <form action="teacher_create_form.html">
     <label for=\"discipline_select\">Преподаваемая дисциплина</label>
 	<select onchange="getTeachersForDiscipline(this.value)" name=\"discipline\" id=\"discipline_select\">
     <option value=0 style="text-align:center;">-- Все дисциплины --</option>
     <? require_once __DIR__ . '/get_disciplines.php'; ?>
     </select>
+    <input type="submit" value="Добавить">
+    </form>
 
     <table>
         <thead>

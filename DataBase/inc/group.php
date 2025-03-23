@@ -21,4 +21,13 @@ GROUP BY group_id,group_name,direction_name
 			echo "<h3>Кол-во студентов: {$row['stud_count']}</h3>";
 		}
 	}
+	echo "<h3>Состав группы:</h3>";
+		
+		echo '<table>';
+			echo '<thead>';
+			echo '</thead>';
+			echo '<tbody id="table-students">';
+				require_once __DIR__.'/get_students_for_group.php';
+			echo '</tbody>';
+		echo '</table>';
 ?>
