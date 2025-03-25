@@ -22,6 +22,11 @@
 			//var_dump($daterange);
 			echo "Опыт преподавания: {$daterange->format('%Y years')}<br>";
 		}
+
+		echo "<form action=\"teacher_update_form.php?id={$_REQUEST['id']}\" method=\"post\">";
+		echo '<input type="submit" value="UPDATE">';
+		echo '</form>';
+
 		echo "<h3>Читаемые дисциплины:</h3>";
 		
 		echo '<table>';
