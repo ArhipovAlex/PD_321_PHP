@@ -29,7 +29,8 @@
 		$date_string
 		);
 	var_dump($values);
-	$stmt = sqlsrv_prepare($connection, $query, $values);
+	//$stmt = sqlsrv_prepare($connection, $query, $values);
+	$stmt = sqlsrv_query($connection, $query, $values);
 
 	var_dump($stmt);
 	//var_dump($result);
