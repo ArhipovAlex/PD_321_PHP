@@ -12,3 +12,9 @@ th{
 	height:50px;
 	text-align:center;
 }
+.table-with-combobox {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	border: solid 1px;
+}
