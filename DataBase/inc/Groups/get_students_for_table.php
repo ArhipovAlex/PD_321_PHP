@@ -1,6 +1,6 @@
 <?php
-	require_once __DIR__ . "/connection.php";
-	require_once __DIR__ . "/format_table.php";
+	require_once __DIR__ . "/../connection.php";
+	require_once __DIR__ . "/../format_table.php";
 	$query="SELECT
 	stud_id,
 	last_name + ' ' + first_name + ' ' + middle_name AS full_name,

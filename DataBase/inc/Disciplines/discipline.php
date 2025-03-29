@@ -29,7 +29,7 @@
 				<option value="0">
 				-- Добавить преподавателя --
 				</option>
-				<?php require_once __DIR__ . '/get_teachers_to_combo.php'; ?>
+				<?php require_once __DIR__ . '/../Teachers/get_teachers_to_combo.php'; ?>
 				</select>
 				<br>
 				<input type="button" value="Добавить" style="margin-top:10px;" onclick="addTeacherForDiscipline()">

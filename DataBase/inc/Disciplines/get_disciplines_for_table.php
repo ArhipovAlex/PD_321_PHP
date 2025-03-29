@@ -1,7 +1,7 @@
 <?php
 
-	require_once __DIR__ . "/connection.php";
-	require_once __DIR__ . "/format_table.php";
+	require_once __DIR__ . "/../connection.php";
+	require_once __DIR__ . "/../format_table.php";
 
 	$query="SELECT
 	discipline_id,

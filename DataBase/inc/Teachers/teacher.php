@@ -1,5 +1,5 @@
 <?php
-	require_once __DIR__.'/connection.php';
+	require_once __DIR__.'/../connection.php';
 	//print_r($_REQUEST);
 
 	//function get_teacher_from_base($id)

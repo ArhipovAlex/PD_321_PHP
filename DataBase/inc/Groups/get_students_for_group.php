@@ -1,8 +1,8 @@
 ﻿<?php
 	$id=$_REQUEST["id"];
 	if($id>0){
-	require_once __DIR__ . "/connection.php";
-	require_once __DIR__ . "/format_table.php";
+	require_once __DIR__ . "/../connection.php";
+	require_once __DIR__ . "/../format_table.php";
 
 	$query="SELECT
 	stud_id,

@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
     <title>Disciplines</title>
 </head>
 <body>
@@ -42,7 +42,7 @@
                     if(this.readyState == 4 && this.status == 200)
                         document.getElementById("table-disciplines").innerHTML = this.responseText;
                 };
-                request.open("GET","get_disciplines_for_teacher.php?id="+id,true);
+                request.open("GET","../Teachers/get_disciplines_for_teacher.php?id="+id,true);
                 request.send();
             //}
         }
