@@ -3,17 +3,20 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
     <title>Teachers</title>
 </head>
 <body>
     <h1>Teachers</h1>
 
+    <form action="teacher_create_form.html">
     <label for=\"discipline_select\">Преподаваемая дисциплина</label>
 	<select onchange="getTeachersForDiscipline(this.value)" name=\"discipline\" id=\"discipline_select\">
     <option value=0 style="text-align:center;">-- Все дисциплины --</option>
-    <? require_once __DIR__ . '/get_disciplines.php'; ?>
+    <? require_once __DIR__ . '/../Disciplines/get_disciplines.php'; ?>
     </select>
+    <input type="submit" value="Добавить">
+    </form>
 
     <table>
         <thead>
@@ -37,10 +40,11 @@
                     if(this.readyState == 4 && this.status == 200)
                         document.getElementById("table-teachers").innerHTML = this.responseText;
                 };
-                request.open("GET","get_teachers_for_discipline.php?id="+id,true);
+                request.open("GET","../Disciplines/get_teachers_for_discipline.php?id="+id,true);
                 request.send();
             //}
         }
+
     </script>
 </body>
 </html>
